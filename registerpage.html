@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+    body {
+        background-color: #f2f2f2;
+        font-family: 'Ubuntu', sans-serif;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Style the navbar */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1em;
+        background-color: #036303;
+        color: white;
+    }
+
+    .logo {
+        width: 50px; /* Adjust the width as needed */
+        height: auto; /* Maintain the aspect ratio */
+        margin-right: 10px; /* Add spacing to the right of the logo */
+        border-radius: 100%;
+    }
+    .title{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    /* Style the title */
+    .title h1 {
+        font-size: 1.5em;
+        margin: 0;
+    }
+
+    /* Style the help button */
+    .help_button {
+        background-color: #036303;
+        color: white;
+        border: 2px solid white;
+        border-radius: 4px;
+        padding: 0.5em 1em;
+        margin: 10px;
+    }
+
+    /* Style the main content container */
+    .main {
+        padding: 2em;
+    }
+
+    /* Style the steps navigation */
+    .steps {
+        display: flex;
+        align-items: center;
+        background-color: #036303;
+        color: white;
+        padding: 0.5em 1em;
+        border-radius: 4px;
+        justify-content: center;
+    }
+    .steps a{
+        font-style: none;
+        font-weight: bold;
+        color: white;
+    }
+
+    /* Style the registration form */
+    .registration_form {
+        background-color: white;
+        padding: 2em;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Style form elements */
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        font-weight: bold;
+        margin-top: 1em;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="password"] {
+        padding: 0.5em;
+        margin-bottom: 1em;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    select {
+        padding: 0.5em;
+        margin-bottom: 1em;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    input[type="submit"] {
+        background-color: #036303;
+        color: white;
+        border: none;
+        padding: 0.5em 1em;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        width: 100px;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <nav class="navbar">
+            <div class="title">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgzEjlWUUEdCerUry1W7wOKcLKpepjV9hOEQ&usqp=CAU" alt="community logo" class="logo">
+                <h1>HarmonicHeaven</h1>
+            </div>
+            <div class="help">
+                <button class="help_button">Help</button>
+            </div>
+        </nav>
+    </div>
+    <div class="main">
+        <div class="steps">
+            <h3>Sign Up</h3>
+        </div>
+        <div class="registration_form">
+            <form action="">
+                <input type="text" name="name" id="name" placeholder="Enter your name">
+                <input type="text" name="mobileno" id="mobileno" placeholder="Enter your mobile number">
+                <input type="email" name="emailid" id="emailid" placeholder="Enter your email">
+                <input type="date" name="dob" id="dob" placeholder="Enter your date of birth">
+                <input type="password" name="password" id="password" placeholder="Enter a strong password">
+                <label for="district">Choose your State</label>
+                <select name="state" id="country">
+                    <option value="">-- Select State --</option>
+                </select>
+                <label for="district">Choose your District</label>
+                <select name="district" id="state">
+                    <option value="">-- Select District --</option>
+                </select>
+                <label for="district">Choose your City or Mandal</label>
+                <select name="city" id="city">
+                    <option value="">-- Select City --</option>
+                </select>
+                <label for="district">Choose your Area</label>
+                <select name="locality" id="zip">
+                    <option value="">-- Select locality --</option>
+                </select>
+                <input type="text" name="address" id="address" placeholder="Enter your address here">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+    <Script>
+        var countrySateCityinfo = {
+    Andhrapradesh: {
+    Krishna: {
+        Vijayawada: ["kothuru", "paidurupadu", "shahabad"],
+        Machilipatnam: ["chilakallapudi", "chinnapuram"]
+    },
+    Prakasam: {
+        Ongollu: ["Annavaraped", "Koppala"],
+        Markapuram: ["Bhupathi palle", "Akkacheruvu"],
+        Chirala: ["Gavinivari pallem", "Ipuru pallem"]
+    }
+},
+Telangana: {
+    Vikarabad: {
+        Tandur: ["Kothlapur", "Malkapur"],
+        Pargi: ["Babapur", "Bassireddy palli"]
+    },
+    Hyderabad: {
+        Secunderabad: ["Malkajgiri", "lalaguda"],
+        Amberpet: ["koti", "Banjara Hills"]
+    }
+},
+
+Maharashtra: {
+    Ahmednagar: {
+        Akola: ["Balapur", "Akot"],
+        Karjet: ["Adiwali", "Ambiwali Bk"]
+    },
+    Aurangabad: {
+        Sillod: ["Pauthan", "Khadki"],
+        Gangapur: ["Sambji", "Marathpur"]
+    }
+    }
+    
+}
+
+window.onload = function(){
+    const selectCountry = document.getElementById('country'),
+        selectState = document.getElementById('state'),
+        selectCity = document.getElementById('city'),
+        selectZip = document.getElementById('zip'),
+        selects = document.querySelectorAll('select')
+
+        selectState.disabled = true
+        selectCity.disabled = true
+        selectZip.disabled = true
+
+        selects.forEach(select => {
+            if(select.disabled == true){
+                select.style.cursor = "auto"
+            }
+            else{
+                select.style.cursor = "pointer"
+            }
+        })
+
+        for(let country in countrySateCityinfo){
+            // console.log(country);
+            selectCountry.options[selectCountry.options.length] = new Option(country, country)
+        }
+
+
+        // country change
+        selectCountry.onchange = (e) =>{
+            
+            selectState.disabled = false
+            selectCity.disabled = true
+            selectZip.disabled = true
+
+            selects.forEach(select => {
+                if(select.disabled == true){
+                    select.style.cursor = "auto"
+                }
+                else{
+                    select.style.cursor = "pointer"
+                }
+            })
+
+            selectState.length = 1
+            selectCity.length = 1
+            selectZip.length = 1
+
+            for(let state in countrySateCityinfo[e.target.value]){
+                // console.log(state);
+                selectState.options[selectState.options.length] = new Option(state, state)
+            }
+        }
+
+        // state change
+        selectState.onchange = (e) =>{
+            selectCity.disabled = false
+            selectZip.disabled = true
+
+            selects.forEach(select => {
+                if(select.disabled == true){
+                    select.style.cursor = "auto"
+                }
+                else{
+                    select.style.cursor = "pointer"
+                }
+            })
+
+            selectCity.length = 1
+            selectZip.length = 1
+
+            for(let city in countrySateCityinfo[selectCountry.value][e.target.value]){
+                // console.log(city);
+                selectCity.options[selectCity.options.length] = new Option(city, city)
+            }
+        }
+
+        // change city
+        selectCity.onchange = (e) =>{
+            selectZip.disabled = false
+
+            selects.forEach(select => {
+                if(select.disabled == true){
+                    select.style.cursor = "auto"
+                }
+                else{
+                    select.style.cursor = "pointer"
+                }
+            })
+            
+            selectZip.length = 1
+
+            let zips = countrySateCityinfo[selectCountry.value][selectState.value][e.target.value]
+            
+            for(let i=0; i<zips.length; i++){
+                selectZip.options[selectZip.options.length] = new Option(zips[i], zips[i])
+            }
+        }
+}
+    </Script>
+</body>
+</html>

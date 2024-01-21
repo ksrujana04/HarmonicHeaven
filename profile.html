@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>ta charset="UTF-8">
+    <title>Profile</title>
+    <style>
+* {   
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: black;
+        }
+
+        /* Set a background color and font for the entire page */
+        body {
+            background-color: #f2f2f2;
+            font-family: 'Ubuntu', sans-serif;
+            color: #333;
+        }
+
+        /* Style the navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em;
+            background-color: #036303;
+            color: white;
+            height: 75px;
+        }
+       .logo {
+        width: 50px; /* Adjust the width as needed */
+        height: auto; /* Maintain the aspect ratio */
+        margin-right: 10px; /* Add spacing to the right of the logo */
+        border-radius: 100%;
+    }
+    .title{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+        /* Style the title */
+        .title h1 {
+            font-size: 1.5em;
+        }
+
+        /* Style the help button */
+        .help_button {
+            background-color: #036303;
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+   .navbar div {
+            margin-right: 1em;
+        }
+
+        .items{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        /* Style the dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .services {
+            background-color: #036303;
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            color: #333;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .profile{
+            width:40px;
+            border-radius: 50%;
+            cursor: pointer;
+            margin-left:20px;
+        }
+        .profile-label p{
+            color: #036303;
+        }
+        .sub-menu-wrap{
+            position: absolute;
+            top:10%;
+            right: 0.5%;
+            width: 320px;
+            max-height:0px;
+            overflow: hidden;
+            transition: max-height 0.5s;
+        }
+        .sub-menu-wrap.open-menu{
+            max-height: 400px;
+        }
+        .sub-menu{
+            background: #fff;
+            padding:20px;
+            margin: 10px;
+        }
+        .user-info{
+            display:flex;
+            align-items:center;
+        }
+        .user-info h2{
+            font-weight: 500;
+        }
+        .user-info img{
+            width:60px;
+            border-radius:50%;
+            margin-right:15px
+        }
+        .sub-menu hr{
+            border:0;
+            height:1px;
+            width:100%;
+            background: #ccc;
+            margin:15px 0 10px
+        }
+</style>
+</head>
+<body>
+    <div>
+        <nav class="navbar">
+            <div class="title">                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgzEjlWUUEdCerUry1W7wOKcLKpepjV9hOEQ&usqp=CAU" alt="community logo" class="logo">
+                <h1 style="color: white;">HarmonicHeaven</h1>
+            </div>
+            <div class="items">
+                <div class="dropdown">
+                    <button class="services"><h2 style="color: white;">Services</h2></button>
+                    <div class="dropdown-content">
+                        <a href="communitypage.html">Home</a>
+                        <a href="announcements.html">Announcements</a>
+                        <a href="discussions.html">Discussions</a>
+                        <a href="problemchatpage.html">Problem chat</a>
+                        <a href="alerts.html">Alert Box</a>
+                        <a href="Volunteeractivities.html">Volunteer Activities</a>
+                        <a href="problemshoot.html">Problem Shoot</a>
+                    </div>
+                </div>
+                <div class="item_2">
+                    <img class="profile" src="https://i.pinimg.com/originals/57/00/c0/5700c04197ee9a4372a35ef16eb78f4e.png" alt="profile picture" onclick="toggleMenu()">
+                </div>
+            </div>
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <img class="profile"src="https://i.pinimg.com/originals/57/00/c0/5700c04197ee9a4372a35ef16eb78f4e.png">
+                        <h2>Name:</h2> 
+                    </div>
+                    <hr>
+                    <h3>Mobile Number: </h3>
+                    <hr>
+                    <h3>Email: </h3>
+                    <hr>
+                    <h3>State: </h3>
+                    <hr>
+                    <h3>City: </h3>
+                    <hr>
+                    <h3>Locality: </h3>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <script>
+        let subMenu = document.getElementById("subMenu");
+        function toggleMenu(){
+            subMenu.classList.toggle("open-menu");
+        }
+    </script>
+</body>
+</html>
