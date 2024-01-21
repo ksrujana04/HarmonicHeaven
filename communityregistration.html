@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Registration</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: 'Ubuntu', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+    
+        /* Style the navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em;
+            background-color: #036303;
+            color: white;
+        }
+        
+        .logo {
+        width: 50px; /* Adjust the width as needed */
+        height: auto; /* Maintain the aspect ratio */
+        margin-right: 10px; /* Add spacing to the right of the logo */
+        border-radius: 100%;
+    }
+    .title{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+        /* Style the title */
+        .title h1 {
+            font-size: 1.5em;
+            margin: 0;
+        }
+
+        /* Style the help button */
+        .help_button {
+            background-color: #036303;
+            color: white;
+            border: 2px solid white;
+            border-radius: 4px;
+            padding: 0.5em 1em;
+            margin: 10px;
+        }
+
+        /* Style the main content */
+        .main {
+            max-width: 800px;
+            margin: 2em auto;
+            padding: 1em;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Style the form */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Style form sections */
+        .form-section {
+            margin-bottom: 1.5em;
+        }
+
+        /* Style labels */
+        label {
+            font-weight: bold;
+        }
+
+        /* Style input fields */
+        input[type="text"],
+        select {
+            width: 95%;
+            padding: 0.5em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 0.5em;
+        }
+
+        /* Style the submit button */
+        input[type="submit"] {
+            background-color: #036303;
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 1em;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <nav class="navbar">
+            <div class="title">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgzEjlWUUEdCerUry1W7wOKcLKpepjV9hOEQ&usqp=CAU" alt="community logo" class="logo">
+                <h1>HarmonicHeaven</h1>
+            </div>
+            <div class="help">
+                <button class="help_button">Help</button>
+            </div>
+        </nav>
+    </div>
+    <div class="main">
+        <h1>New Community Registration</h1>
+        <form action="/communityregistration" method="post">
+            <div class="form-section">
+                <label for="communityName">Community Name</label>
+                <input type="text" name="communityName" id="communityName" placeholder="Enter your Community Name">
+            </div>
+            <label for="state">Choose your state</label>
+                <select name="comm_state" id="country">
+                    <option value="">-- Select State --</option>
+                </select>
+                <label for="district">Choose your District</label>
+                <select name="comm_district" id="state">
+                    <option value="">-- Select District --</option>
+                </select>
+                <label for="city">Choose your City or Mandal</label>
+                <select name="comm_city" id="city">
+                    <option value="">-- Select City --</option>
+                </select>
+                <label for="locality">Choose your Area</label>
+                <select name="comm_locality" id="zip">
+                    <option value="">-- Select locality --</option>
+                </select>
+            <div class="form-section">
+                <label for="pincode">Pincode of Your Locality</label>
+                <input type="text" name="pincode" id="pincode" placeholder="Enter pincode of your locality">
+            </div>
+            <div class="form-section">
+                <label for="about">About Your Community</label>
+                <input type="text" name="about" id="about" placeholder="Write about your community...">
+            </div>
+            <div class="form-section">
+                <h2>Leadership Team</h2>
+                <div class="leader">
+                    <label for="president_name">President Name</label>
+                    <input type="text" name="president_name" id="president_name" placeholder="Enter the president's name">
+                </div>
+                <div class="leader">
+                    <label for="president_number">President's Mobile Number</label>
+                    <input type="text" name="president_number" id="president_number" placeholder="Enter president's mobile number">
+                </div>
+                <div class="leader">
+                    <label for="co-president_name">Co-President Name</label>
+                    <input type="text" name="co_president_name" id="co-president_name" placeholder="Enter the co-president's name">
+                </div>
+                <div class="leader">
+                    <label for="co-president_number">Co-President's Mobile Number</label>
+                    <input type="text" name="co_president_number" id="co-president_number" placeholder="Enter co-president's mobile number">
+                </div>
+            </div>
+            <div class="form-section">
+                <h2>Contacts</h2>
+                <div class="leader">
+                    <label for="police">Police Dial</label>
+                    <input type="text" name="police" id="police" placeholder="Enter the nearest available police number">
+                </div>
+                <div class="leader">
+                    <label for="firestation">Fires Station Dial</label>
+                    <input type="text" name="firestation" id="firestation" placeholder="Enter the nearest available fire station number">
+                </div>
+                <div class="leader">
+                    <label for="municipality">Municipality Dial</label>
+                    <input type="text" name="municipality" id="municipality" placeholder="Enter the municipality number">
+                </div>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <Script>
+        var countrySateCityinfo = {
+    Andhrapradesh: {
+    Krishna: {
+        Vijayawada: ["kothuru", "paidurupadu", "shahabad"],
+        Machilipatnam: ["chilakallapudi", "chinnapuram"]
+    },
+    Prakasam: {
+        Ongollu: ["Annavaraped", "Koppala"],
+        Markapuram: ["Bhupathi palle", "Akkacheruvu"],
+        Chirala: ["Gavinivari pallem", "Ipuru pallem"]
+    }
+},
+Telangana: {
+    Vikarabad: {
+        Tandur: ["Kothlapur", "Malkapur"],
+        Pargi: ["Babapur", "Bassireddy palli"]
+    },
+    Hyderabad: {
+        Secunderabad: ["Malkajgiri", "lalaguda"],
+        Amberpet: ["koti", "Banjara Hills"]
+    }
+},
+
+Maharashtra: {
+    Ahmednagar: {
+        Akola: ["Balapur", "Akot"],
+        Karjet: ["Adiwali", "Ambiwali Bk"]
+    },
+    Aurangabad: {
+        Sillod: ["Pauthan", "Khadki"],
+        Gangapur: ["Sambji", "Marathpur"]
+    }
+    }
+    
+}
+
+window.onload = function(){
+    const selectCountry = document.getElementById('country'),
+        selectState = document.getElementById('state'),
+        selectCity = document.getElementById('city'),
+        selectZip = document.getElementById('zip'),
+        selects = document.querySelectorAll('select')
+
+        selectState.disabled = true
+        selectCity.disabled = true
+        selectZip.disabled = true
+
+        selects.forEach(select => {
+            if(select.disabled == true){
+                select.style.cursor = "auto"
+            }
+            else{
+                select.style.cursor = "pointer"
+            }
+        })
+
+        for(let country in countrySateCityinfo){
+            // console.log(country);
+            selectCountry.options[selectCountry.options.length] = new Option(country, country)
+        }
+
+
+        // country change
+        selectCountry.onchange = (e) =>{
+            
+            selectState.disabled = false
+            selectCity.disabled = true
+            selectZip.disabled = true
+
+            selects.forEach(select => {
+                if(select.disabled == true){
+                    select.style.cursor = "auto"
+                }
+                else{
+                    select.style.cursor = "pointer"
+                }
+            })
+
+            selectState.length = 1
+            selectCity.length = 1
+            selectZip.length = 1
+
+            for(let state in countrySateCityinfo[e.target.value]){
+                // console.log(state);
+                selectState.options[selectState.options.length] = new Option(state, state)
+            }
+        }
+
+        // state change
+        selectState.onchange = (e) =>{
+            selectCity.disabled = false
+            selectZip.disabled = true
+
+            selects.forEach(select => {
+                if(select.disabled == true){
+                    select.style.cursor = "auto"
+                }
+                else{
+                    select.style.cursor = "pointer"
+                }
+            })
+
+            selectCity.length = 1
+            selectZip.length = 1
+
+            for(let city in countrySateCityinfo[selectCountry.value][e.target.value]){
+                // console.log(city);
+                selectCity.options[selectCity.options.length] = new Option(city, city)
+            }
+        }
+
+        // change city
+        selectCity.onchange = (e) =>{
+            selectZip.disabled = false
+
+            selects.forEach(select => {
+                if(select.disabled == true){
+                    select.style.cursor = "auto"
+                }
+                else{
+                    select.style.cursor = "pointer"
+                }
+            })
+            
+            selectZip.length = 1
+
+            let zips = countrySateCityinfo[selectCountry.value][selectState.value][e.target.value]
+            
+            for(let i=0; i<zips.length; i++){
+                selectZip.options[selectZip.options.length] = new Option(zips[i], zips[i])
+            }
+        }
+}
+    </Script>
+</body>
+</html>

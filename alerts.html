@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerts Page</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: black;
+        }
+
+        /* Set a background color and font for the entire page */
+        body {
+            background-color: #f2f2f2;
+            font-family: 'Ubuntu', sans-serif;
+            color: #333;
+        }
+
+        /* Style the navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em;
+            background-color: #036303;
+            color: white;
+            height: 75px;
+        }
+       .logo {
+        width: 50px; /* Adjust the width as needed */
+        height: auto; /* Maintain the aspect ratio */
+        margin-right: 10px; /* Add spacing to the right of the logo */
+        border-radius: 100%;
+    }
+    .title{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+        /* Style the title */
+        .title h1 {
+            font-size: 1.5em;
+        }
+
+        /* Style the help button */
+        .help_button {
+            background-color: #036303;
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+   .navbar div {
+            margin-right: 1em;
+        }
+
+        .items{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        /* Style the dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .services {
+            background-color: #036303;
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            color: #333;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .profile{
+            width:40px;
+            border-radius: 50%;
+            cursor: pointer;
+            margin-left:20px;
+        }
+        .profile-label p{
+            color: #036303;
+        }
+        .sub-menu-wrap{
+            position: absolute;
+            top:10%;
+            right: 0.5%;
+            width: 320px;
+            max-height:0px;
+            overflow: hidden;
+            transition: max-height 0.5s;
+        }
+        .sub-menu-wrap.open-menu{
+            max-height: 400px;
+        }
+        .sub-menu{
+            background: #fff;
+            padding:20px;
+            margin: 10px;
+        }
+        .user-info{
+            display:flex;
+            align-items:center;
+        }
+        .user-info h2{
+            font-weight: 500;
+        }
+        .user-info img{
+            width:60px;
+            border-radius:50%;
+            margin-right:15px
+        }
+        .sub-menu hr{
+            border:0;
+            height:1px;
+            width:100%;
+            background: #ccc;
+            margin:15px 0 10px
+        }
+
+        /* Style the top section */
+        .top {
+
+            align-items: center;
+            padding: 1em;
+            color: black;
+        }
+
+        label {
+            color: #036303;
+            width: 200px;
+            height: 25px;
+            margin-right: 10px;
+        }
+
+        select {
+            width: 200px;
+            height: 25px;
+        }
+
+        /* Style the incidents container */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style individual incidents */
+        .incident {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .incident h2 {
+            margin-top: 0;
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        .incident p {
+            margin-bottom: 1em;
+            text-align: justify;
+        }
+
+        /* Style images */
+        .incident img {
+            max-width: 350px;
+            height: 250px;
+            border-radius: 5%;
+        }
+
+        .imgs{
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <nav class="navbar">
+            <div class="title">                <img
+src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgzEjlWUUEdCerUry1W7wOKcLKpepjV9hOEQ&usqp=CAU"
+alt="community logo" class="logo">
+                <h1 style="color: white;">HarmonicHeaven</h1>
+            </div>
+            <div class="items">
+                <div class="dropdown">
+                    <button class="services"><h2 style="color:
+white;">Services</h2></button>
+                    <div class="dropdown-content">
+                        <a href="communitypage.html">Home</a>
+                        <a href="announcements.html">Announcements</a>
+                        <a href="discussions.html">Discussions</a>
+                        <a href="problemchatpage.html">Problem chat</a>
+                        <a href="alerts.html">Alert Box</a>
+                        <a href="Volunteeractivities.html">Volunteer
+Activities</a>
+                        <a href="problemshoot.html">Problem Shoot</a>
+                    </div>
+                </div>
+                <div class="item_2">
+                    <img class="profile"
+src="https://i.pinimg.com/originals/57/00/c0/5700c04197ee9a4372a35ef16eb78f4e.png"
+alt="profile picture" onclick="toggleMenu()">
+                </div>
+            </div>
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <img
+class="profile"src="https://i.pinimg.com/originals/57/00/c0/5700c04197ee9a4372a35ef16eb78f4e.png">
+                        <h2>Name:</h2>
+                    </div>
+                    <hr>
+                    <h3>Mobile Number: </h3>
+                    <hr>
+                    <h3>Email: </h3>
+                    <hr>
+                    <h3>State: </h3>
+                    <hr>
+                    <h3>City: </h3>
+                    <hr>
+                    <h3>Locality: </h3>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="main">
+        <div class="top">
+            <label for="dropdown"><h1>ALERTS</h1></label>
+            <select id="dropdown">
+                <option value="option1">Driving in Rain? Be cautious</option>
+                <option value="option2">Houses get submerged due to
+rain</option>
+                <option value="option3">Robbery in Mr. Sharma's house</option>
+                <option value="option4">Fire accident in ABC apartment</option>
+            </select>
+        </div>
+        <div class="container">
+            <div class="incident">
+                <h2>Driving in Rain? Be cautious</h2>
+                <p>DATE: 25th July, 2023</p>
+                <p>With the state bracing for more rains in the coming
+days, motorists have been urged to exercise caution by the state
+government as the analysis of previous year shows that most of the
+fatal accidents occur during heavy rain. As we all know, the roads of
+our locality are in a very bad condition and water-logging makes it
+difficult to identify the potholes on the road, leading to a loss of
+control of the vehicle. So, please be careful while driving,
+especially during the night. Yesterday, there was an accident near the
+XYZ junction. Due to the heavy rains, the roads have become slippery
+and a car lost control and crashed into a nearby tree. Luckily, all
+the passengers were safe. So please be cautious while driving and make
+sure that you drive at a speed 20% less than your original speed. Also
+make sure that all the manholes are closed. Please follow the rules to
+ensure the safety of all the people in the locality.</p>
+                <div class="imgs">
+                <img
+src="https://images.hindustantimes.com/img/2021/07/28/1600x900/b5787e3a-ef91-11eb-8e1b-864212280c54_1627469670796.jpg"
+alt="potholes on the road" class="imgg">
+                <br>
+                <img
+src="https://th.bing.com/th/id/OIP.kCD2FMWWlIWvEk0EMRioWQAAAA?pid=ImgDet&rs=1"
+alt="accident at XYZ junction" class="imgg">
+            </div>
+                <p>The above image shows the accident that happened at
+the XYZ junction.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        let subMenu = document.getElementById("subMenu");
+        function toggleMenu(){
+            subMenu.classList.toggle("open-menu");
+        }
+    </script>
+</body>
+</html>
+

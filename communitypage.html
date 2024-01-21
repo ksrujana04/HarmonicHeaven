@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Page</title>
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Set a background color and font for the entire page */
+        body {
+            background-color: #f2f2f2;
+            font-family: 'Ubuntu', sans-serif;
+            color: #333;
+        }
+
+        /* Style the navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em;
+            background-color: #036303;
+            color: white;
+            height: 75px;
+        }
+
+        .logo {
+        width: 50px; /* Adjust the width as needed */
+        height: auto; /* Maintain the aspect ratio */
+        margin-right: 10px; /* Add spacing to the right of the logo */
+        border-radius: 100%;
+    }
+    .title{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        
+    }
+
+        /* Style the title */
+        .title h1 {
+            font-size: 1.5em;
+        }
+
+        /* Style the help button */
+        .help_button {
+            background-color: #036303;
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Add some spacing between elements in the navbar */
+        .navbar div {
+            margin-right: 1em;
+        }
+
+        .items{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        /* Style the dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .services {
+            background-color: #036303;
+            color: white;
+            border: 2px solid white;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: #279d27;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            color: #333;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .profile, .post{
+            background-color: #036303;
+            color: white;
+            border: 2px solid white;
+            border-radius: 4px;
+            padding: 0.5em 1em;
+            margin: 10px;
+        }
+        /* Style the main content container */
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2em;
+        }
+
+        /* Style the description text */
+        .description p {
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        /* Style the "Members" heading */
+        h3 {
+            font-size: 1.5em;
+            margin-top: 1em;
+        }
+
+        /* Style the members section */
+        .members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 1em;
+        }
+
+        /* Style the member cards */
+        .member {
+            background-color: white;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 200px;
+            text-align: center;
+        }
+
+        /* Style the member images as circles */
+        .member img {
+            border-radius: 50%;
+            max-width: 100px;
+            height: auto;
+            margin: 0 auto 10px;
+            display: block;
+        }
+        /* Add some spacing to member names and numbers */
+        .member h4, .member p {
+            margin: 0.5em 0;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            margin-top: 1em;
+        }
+
+        /* Style the events section */
+        .events {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 1em;
+        }
+
+        /* Style individual event cards */
+        .event {
+            background-color: white;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 250px; /* 3 columns with spacing */
+            height: 200px;
+            text-align: center;
+        }
+
+        /* Style event images */
+        .event img {
+            max-width: 95%;
+            height: 50%;
+            border-radius: 8px;
+        }
+
+        /* Style event titles */
+        .event h4 {
+            font-size: 1.2em;
+            margin-top: 0.5em;
+        }
+
+        /* Style event status */
+        .event p {
+            color: #036303;
+            font-weight: bold;
+        }
+        .container{
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(85, 87, 86, 0.5),rgb(85, 87, 86, 0.5));
+            position: relative;
+            justify-content: center;
+        }
+        .bgvideo{
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div>
+        <video autoplay loop muted plays-inline class="bgvideo">
+            <source src="production_id_4808773 (2160p).mp4" type = "video/mp4">
+        </video>
+        <nav class="navbar">
+            <div class="title">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgzEjlWUUEdCerUry1W7wOKcLKpepjV9hOEQ&usqp=CAU" alt="community logo" class="logo">
+                <h1>HarmonicHeaven</h1>
+            </div>
+            <div class="items">
+                <div class="dropdown">
+                    <button class="services">Services</button>
+                    <div class="dropdown-content">
+                        <a href="communitypage.html">Home</a>
+                        <a href="announcements.html">Announcements</a>
+                        <a href="discussions.html">Discussions</a>
+                        <a href="problemchatpage.html">Problem chat</a>
+                        <a href="alerts.html">Alert Box</a>
+                        <a href="Volunteeractivities.html">Volunteer Activities</a>
+                        <a href="problemshoot.html">Problem Shoot</a>
+                    </div>
+                </div>
+                <div class="item_2">
+                    <button class="profile" onclick="location.href='profilepage.html'">Profile</button>
+                </div>
+                <div class="item_3">
+                    <button class="post" onclick=" "> + Post</button>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="main">
+        <h1 style="color:  white;">Bowenpally Community</h1>
+        <div class="description">
+            <p style="color: white;">Welcome to CommunityHub, your community connection platform. Our Community has been active on the CommunityHub portal for almost five years. Our community has prospered alot in these years, thanks to community members, volunteers and incharges of the community.</p>
+        </div>
+        <h3 style="color:  white;">Members</h3>
+        <div class="members">
+            <div class="member">
+                <img src="https://img.freepik.com/premium-vector/account-icon-user-icon-vector-graphics_292645-552.jpg" alt="president image">
+                <h4>President</h4>
+                <p>Mobile No: 91xxxxxx34</p>
+            </div>
+            <div class="member">
+                <img src="https://img.freepik.com/premium-vector/account-icon-user-icon-vector-graphics_292645-552.jpg" alt="co-president image">
+                <h4>Co-President</h4>
+                <p>Mobile No: 91xxxxxx34</p>
+            </div>
+            <div class="member">
+                <img src="https://img.freepik.com/premium-vector/account-icon-user-icon-vector-graphics_292645-552.jpg" alt="Incharge image">
+                <h4>Incharge</h4>
+                <p>Mobile No: 91xxxxxx34</p>
+            </div>
+            <div class="member">
+                <img src="https://img.freepik.com/premium-vector/account-icon-user-icon-vector-graphics_292645-552.jpg" alt="Incharge image">
+                <h4>Incharge</h4>
+                <p>Mobile No: 91xxxxxx34</p>
+            </div>
+            <div class="member">
+                <img src="https://img.freepik.com/premium-vector/account-icon-user-icon-vector-graphics_292645-552.jpg" alt="Incharge image">
+                <h4>Incharge</h4>
+                <p>Mobile No: 91xxxxxx34</p>
+            </div>
+        </div>
+        <h3 style="color: white;">Events</h3>
+        <div class="events">
+            <div class="event">
+                <img src="https://images.unsplash.com/photo-1599106242946-fd550dac004c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZHVyZ2ElMjBtYWF8ZW58MHx8MHx8fDA%3D&w=1000&q=80" alt="durga puja">
+                <h4>Durga Puja</h4>
+                <p>#upcoming</p>
+            </div>
+            <div class="event">
+                <img src="https://st1.latestly.com/wp-content/uploads/2022/10/Eid-Milad-un-Nabi-2022.jpg" alt="Eid Miladun Nabi">
+                <h4>Eid Miladun Nabi</h4>
+                <p>#completed</p>
+            </div>
+            <div class="event">
+                <img src="https://static.toiimg.com/thumb/imgsize-23456,msid-70877092,width-600,resizemode-4/70877092.jpg"alt="Ganesh Chaturthi">
+                <h4>Ganesh Chaturthi</h4>
+                <p>#completed</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
