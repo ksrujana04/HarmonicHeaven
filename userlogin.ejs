@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Set a background color and font for the entire page */
+        body {
+            background-color: #f2f2f2;
+            font-family: 'Ubuntu', sans-serif;
+            color: #333;
+        }
+
+        /* Style the navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em;
+            background-color: #036303;
+            color: white;
+            height: 75px;
+        }
+
+        .logo {
+        width: 50px; /* Adjust the width as needed */
+        height: auto; /* Maintain the aspect ratio */
+        margin-right: 10px; /* Add spacing to the right of the logo */
+        border-radius: 100%;
+    }
+    .title{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+        /* Style the title */
+        .title h1 {
+            font-size: 1.5em;
+        }
+
+        /* Style the help button */
+        .help_button {
+            background-color: #036303;
+            color: white;
+            border: 2px solid white;
+            border-radius: 4px;
+            padding: 0.5em 1em;
+            margin: 10px;
+        }
+
+        /* Add some spacing between elements in the navbar */
+        .navbar div {
+            margin-right: 1em;
+        }
+
+        /* Style the main content container */
+        .main {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 2em;
+        }
+
+        /* Style the description text */
+        .description p {
+            font-size: 1.2em;
+            display: block;
+            width: 500px;
+            align-content: center;
+            align-items: center;
+            text-align: justify;
+        }
+
+        /* Style the login portal */
+        .login_portal {
+            background-color: white;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 350px;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            height: 250px;
+        }
+
+        /* Style the login form */
+        .login_form {
+            margin-bottom: 1em;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            
+        }
+
+        /* Style the input fields */
+        input[type="text"] input[type="password"]{
+            padding: 0.5em;
+            margin-bottom: 1em;
+            margin-top: 2%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 350px;
+        }
+
+        /* Style the login button */
+        .submit-btn {
+            background-color: #036303;
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 1em;
+            width: 100px;
+        }
+
+        /* Style the "New user" text and register link */
+        .new_user {
+            display: flex;
+            width: 300px;
+            justify-items: center;
+        }
+
+        .new_user p {
+            margin-bottom: 0.5em;
+            margin-left: 5em;
+        }
+
+        .new_user a , .new_community a{
+            color: #036303;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .new_community{
+            margin-left: 3em;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <nav class="navbar">
+            <div class="title">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgzEjlWUUEdCerUry1W7wOKcLKpepjV9hOEQ&usqp=CAU" alt="community logo" class="logo">
+                <h1>HarmonicHeaven</h1>
+            </div>
+            <div class="help">
+                <button class="help_button">Help</button>
+            </div>
+        </nav>
+    </div>
+    <div class="main">
+        <div class="description">
+            <p>Welcome to the Neighborhood Safety Network, your trusted online platform for fostering community safety and connectivity. Our platform empowers residents like you to report safety incidents, stay informed with real-time alerts, engage with neighbors, and collaborate seamlessly with local law enforcement. We're dedicated to enhancing your neighborhood's security and strengthening the bonds within your community. Together, we can create a safer and more connected neighborhood for everyone. Join us in building a safer tomorrow.</p>
+        </div>
+        <div class="login_portal">
+            <div class="login_form">
+                <h1>Login</h1>
+                <form action="/" method="post">
+                    <!--<div class="form-group">
+                      <label for="name">Name:</label>
+                      <input type="text" id="name" name="emailid" placeholder="Enter your email id" required autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                      <label for="password">password:</label>
+                      <input type="password" id="password" name="password" placeholder="password" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Login</button>
+                  </form>-->
+                <input type="text" name="emailid" placeholder="Email ID">
+                <br>
+                <input type="password"name="password" placeholder="Password">
+                <button type="submit" class="submit-btn">Login</button>
+                </form>
+            </div>
+            <div class="links">
+            <div class="new_user">
+                <p>New user? </p>
+                <a href="/usersignup"> Register here</a>
+            </div>
+            <div class="new_community">
+                <a href="/communityregistration"> Register New Community here</a>
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
